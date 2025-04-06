@@ -1,14 +1,14 @@
-# Byte AI Assistant
+# Byte64 AI Assistant
 
 A powerful AI-powered coding assistant for VS Code that helps developers write, analyze, refactor, and optimize code.
 
 <div align="center">
-  <img src="media/icons/icon-white.png" alt="Byte AI Assistant" width="128">
+  <img src="media/icons/icon-white.png" alt="Byte64 AI Assistant" width="128">
 </div>
 
 <div align="center">
   <h2>Architecture Overview</h2>
-  <img src="public/modern-architecture.png" alt="Byte AI Architecture" width="800">
+  <img src="public/modern-architecture.png" alt="Byte64 AI Architecture" width="800">
 </div>
 
 ## ✨ Features
@@ -28,7 +28,7 @@ A powerful AI-powered coding assistant for VS Code that helps developers write, 
 
 ## 🧠 Supported AI Providers
 
-Byte supports multiple AI providers to fit your preference and needs:
+Byte64 supports multiple AI providers to fit your preference and needs:
 
 - **OpenAI** (GPT-3.5-Turbo, GPT-4, GPT-4-Turbo)
 - **Google Gemini** (Gemini 1.5 Flash, Gemini 1.5 Pro)
@@ -41,25 +41,25 @@ Byte supports multiple AI providers to fit your preference and needs:
 
 1. Open VS Code
 2. Go to Extensions (Ctrl+Shift+X or Cmd+Shift+X)
-3. Search for "Byte AI Assistant"
+3. Search for "Byte64 AI Assistant"
 4. Click Install
 
 ### Manual Installation
 
-Download the `.vsix` file from the [releases page](https://github.com/tuncer-byte/byte/releases) and install it using:
+Download the `.vsix` file from the [releases page](https://github.com/yusiqo/byte64/releases) and install it using:
 
 ```bash
-code --install-extension byte-0.1.1.vsix
+code --install-extension byte64-0.1.1.vsix
 ```
 
 ### From Source
 
 ```bash
 # Clone the repository
-git clone https://github.com/tuncer-byte/byte.git
+git clone https://github.com/yusiqo/byte64.git
 
 # Navigate to the directory
-cd byte
+cd byte64
 
 # Install dependencies
 npm install
@@ -68,13 +68,13 @@ npm install
 npm run vscode:prepublish
 
 # Install the extension from the local .vsix file
-code --install-extension byte-0.1.1.vsix
+code --install-extension byte64-0.1.1.vsix
 ```
 
 ## 🚀 Getting Started
 
 1. **Install the extension** from the VS Code marketplace or using the manual method above
-2. **Open the Byte panel** by clicking the Byte icon in the activity bar
+2. **Open the Byte64 panel** by clicking the Byte64 icon in the activity bar
 3. **Configure your AI provider** using the `/configure` command in the chat panel 
    - You'll need an API key for most providers (OpenAI, Anthropic, Google)
    - For local models, ensure Ollama is running with your preferred model
@@ -110,7 +110,7 @@ The Bug Finder feature automatically monitors your terminal for errors and provi
 
 1. **Start Error Monitoring**
    - Use the command palette (`Ctrl+Shift+P` or `Cmd+Shift+P`)
-   - Select "Byte: Start Terminal Error Monitoring"
+   - Select "Byte64: Start Terminal Error Monitoring"
    - A notification will appear, and a status bar indicator will show monitoring is active
 
 2. **Automatic Error Detection**
@@ -119,7 +119,7 @@ The Bug Finder feature automatically monitors your terminal for errors and provi
    - Click "Analyze Error with AI" to get a solution
 
 3. **Manual Error Analysis**
-   - Use the command "Byte: Analyze Error Message" to manually analyze errors
+   - Use the command "Byte64: Analyze Error Message" to manually analyze errors
    - Paste the error message when prompted
    - The AI will analyze the error and suggest solutions
 
@@ -132,7 +132,7 @@ The Bug Finder feature automatically monitors your terminal for errors and provi
    - You can apply suggested commands or code changes directly from the panel
 
 5. **Stop Monitoring**
-   - Use the command "Byte: Stop Terminal Error Monitoring" to stop
+   - Use the command "Byte64: Stop Terminal Error Monitoring" to stop
    - Or click on the status bar indicator to turn it off
 
 ## ⌨️ Commands and Shortcuts
@@ -141,15 +141,15 @@ The Bug Finder feature automatically monitors your terminal for errors and provi
 
 | Command | Description |
 |---------|-------------|
-| `Byte: Open AI Chat` | Open the main chat panel |
-| `Byte: Explain Selected Code` | Get an explanation of the selected code |
-| `Byte: Refactor Selected Code` | Get suggestions to improve the selected code |
-| `Byte: Generate Documentation` | Generate documentation for the selected code |
-| `Byte: Optimize Code` | Get performance optimization suggestions |
-| `Byte: Generate Unit Tests` | Create unit tests for the selected code |
-| `Byte: Add Comments to Code` | Add detailed comments to the selected code |
-| `Byte: Analyze Code Issues` | Find potential bugs and code smells |
-| `Byte: Configure AI Service` | Set up your preferred AI provider and API key |
+| `Byte64: Open AI Chat` | Open the main chat panel |
+| `Byte64: Explain Selected Code` | Get an explanation of the selected code |
+| `Byte64: Refactor Selected Code` | Get suggestions to improve the selected code |
+| `Byte64: Generate Documentation` | Generate documentation for the selected code |
+| `Byte64: Optimize Code` | Get performance optimization suggestions |
+| `Byte64: Generate Unit Tests` | Create unit tests for the selected code |
+| `Byte64: Add Comments to Code` | Add detailed comments to the selected code |
+| `Byte64: Analyze Code Issues` | Find potential bugs and code smells |
+| `Byte64: Configure AI Service` | Set up your preferred AI provider and API key |
 
 ### Chat Slash Commands
 
@@ -168,9 +168,9 @@ The Bug Finder feature automatically monitors your terminal for errors and provi
 
 | Command | Description |
 |---------|-------------|
-| `Byte: Start Terminal Error Monitoring` | Begin monitoring terminal for errors |
-| `Byte: Stop Terminal Error Monitoring` | Stop the error monitoring process |
-| `Byte: Analyze Error Message` | Manually analyze an error message |
+| `Byte64: Start Terminal Error Monitoring` | Begin monitoring terminal for errors |
+| `Byte64: Stop Terminal Error Monitoring` | Stop the error monitoring process |
+| `Byte64: Analyze Error Message` | Manually analyze an error message |
 
 ### Keyboard Shortcuts
 
@@ -182,22 +182,22 @@ The Bug Finder feature automatically monitors your terminal for errors and provi
 
 ## 🧩 Extension Settings
 
-Byte AI Assistant provides several configuration options:
+Byte64 AI Assistant provides several configuration options:
 
 | Setting | Description |
 |---------|-------------|
-| `byte.provider` | AI service provider (openai, gemini, local, anthropic) |
-| `byte.openai.apiKey` | OpenAI API key |
-| `byte.openai.model` | OpenAI model (gpt-3.5-turbo, gpt-4, gpt-4-turbo) |
-| `byte.gemini.apiKey` | Google Gemini API key |
-| `byte.gemini.model` | Gemini model (gemini-1.5-flash, gemini-1.5-pro) |
-| `byte.anthropic.apiKey` | Anthropic API key |
-| `byte.anthropic.model` | Anthropic model (claude-3-haiku, claude-3-sonnet, claude-3-opus) |
-| `byte.local.endpoint` | Ollama service endpoint URL |
-| `byte.local.model` | Local model name (llama3, codellama, mistral, mixtral, neural-chat, phi) |
-| `byte.saveHistory` | Save chat history between sessions |
-| `byte.cache.enabled` | Enable API response caching to reduce token usage |
-| `byte.autoSwitch` | Enable automatic model switching based on task complexity |
+| `byte64.provider` | AI service provider (openai, gemini, local, anthropic) |
+| `byte64.openai.apiKey` | OpenAI API key |
+| `byte64.openai.model` | OpenAI model (gpt-3.5-turbo, gpt-4, gpt-4-turbo) |
+| `byte64.gemini.apiKey` | Google Gemini API key |
+| `byte64.gemini.model` | Gemini model (gemini-1.5-flash, gemini-1.5-pro) |
+| `byte64.anthropic.apiKey` | Anthropic API key |
+| `byte64.anthropic.model` | Anthropic model (claude-3-haiku, claude-3-sonnet, claude-3-opus) |
+| `byte64.local.endpoint` | Ollama service endpoint URL |
+| `byte64.local.model` | Local model name (llama3, codellama, mistral, mixtral, neural-chat, phi) |
+| `byte64.saveHistory` | Save chat history between sessions |
+| `byte64.cache.enabled` | Enable API response caching to reduce token usage |
+| `byte64.autoSwitch` | Enable automatic model switching based on task complexity |
 
 You can configure these settings through:
 - VS Code Settings UI
@@ -277,7 +277,7 @@ To debug the extension:
 For features like the Bug Finder that use proposed VS Code APIs, you need to enable them in development:
 
 ```bash
-code --enable-proposed-api byte.byte
+code --enable-proposed-api byte64.byte64
 ```
 
 ## 🔒 Privacy and Security
