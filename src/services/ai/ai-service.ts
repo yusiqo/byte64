@@ -12,7 +12,8 @@ import {
     OpenAIProvider, 
     GeminiProvider, 
     LocalProvider, 
-    AnthropicProvider 
+    AnthropicProvider,
+    OpenRouterProvider 
 } from './providers';
 import { AILogger } from './utils/logger';
 import { ProviderSelector } from './utils/provider-selector';
@@ -33,6 +34,7 @@ import {
  */
 export class AIService {
     private openAIProvider: OpenAIProvider;
+    private openRouterProvider: OpenRouterProvider;
     private geminiProvider: GeminiProvider;
     private localProvider: LocalProvider;
     private anthropicProvider: AnthropicProvider;
@@ -47,6 +49,7 @@ export class AIService {
         
         // Initialize all providers
         this.openAIProvider = new OpenAIProvider(context);
+        this.openRouterProvider = new OpenRouterProvider(context);
         this.geminiProvider = new GeminiProvider(context);
         this.localProvider = new LocalProvider();
         this.anthropicProvider = new AnthropicProvider(context);
@@ -154,6 +157,9 @@ export class AIService {
             switch (this.currentProvider) {
                 case AIProvider.OpenAI:
                     response = await this.openAIProvider.callOpenAI(userMessage, this.messages);
+                    break;
+                case AIProvider.OpenRouter:
+                    response = await this.openRouterProvider.callOpenRouter(userMessage, this.messages);
                     break;
                 case AIProvider.Gemini:
                     // Gemini içim cacheleme özelliğini kullanma
@@ -314,6 +320,10 @@ export class AIService {
                 apiKey: await this.openAIProvider.getApiKey() || '',
                 model: config.get<string>('openai.model') || 'gpt-3.5-turbo'
             },
+            openrouter: {
+                apiKey: await this.openRouterProvider.getApiKey() || '',
+                model: config.get<string>('openrouter.model') || 'google/gemini-2.5-pro-exp-03-25:free'
+            },
             gemini: {
                 apiKey: await this.geminiProvider.getApiKey() || '',
                 model: config.get<string>('gemini.model') || 'gemini-1.5-flash'
@@ -360,6 +370,13 @@ export class AIService {
                 await this.openAIProvider.setApiKey(settings.openai.apiKey);
             }
         }
+
+        // Model ayarlarını güncelle (OpenRouter için)
+        if (settings.openrouter) {
+            if (settings.openrouter.apiKey) {
+                await this.openRouterProvider.setApiKey(settings.openrouter.apiKey);
+            }
+        }
         
         // Gemini ayarlarını güncelle
         if (settings.gemini) {
@@ -385,6 +402,10 @@ export class AIService {
     // Helper methods for setting API keys
     public async setOpenAIApiKey(apiKey: string): Promise<void> {
         await this.openAIProvider.setApiKey(apiKey);
+    }
+
+    public async setOpenRouterApiKey(apiKey: string): Promise<void> {
+        await this.openRouterProvider.setApiKey(apiKey);
     }
     
     public async setGeminiApiKey(apiKey: string): Promise<void> {

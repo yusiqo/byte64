@@ -37,9 +37,11 @@
     
     // API Anahtarı Giriş Alanları
     const openaiApiKeyInput = document.getElementById('openaiApiKey');
+    const openrouterApiKeyInput = document.getElementById('openrouterApiKey');
     const geminiApiKeyInput = document.getElementById('geminiApiKey');
     const localEndpointInput = document.getElementById('localEndpoint');
     const openaiModelSelect = document.getElementById('openaiModel');
+    const openrouterModelSelect = document.getElementById('openrouterModel');
     const geminiModelSelect = document.getElementById('geminiModel');
     const localModelSelect = document.getElementById('localModel');
     const saveHistoryCheckbox = document.getElementById('saveHistory');
@@ -67,6 +69,10 @@
             openai: {
                 apiKey: '',
                 model: 'gpt-3.5-turbo'
+            },
+            openrouter: {
+                apiKey: '',
+                model: 'google/gemini-2.5-pro-exp-03-25:free'
             },
             gemini: {
                 apiKey: '',
@@ -304,6 +310,10 @@
         openaiApiKeyInput.value = state.settings.openai?.apiKey || '';
         openaiModelSelect.value = state.settings.openai?.model || 'gpt-3.5-turbo';
         
+        // OpenRouter ayarları
+        openrouterApiKeyInput.value = state.settings.openrouter?.apiKey || '';
+        openrouterModelSelect.value = state.settings.openrouter?.model || 'google/gemini-2.5-pro-exp-03-25:free';
+        
         // Gemini ayarları
         geminiApiKeyInput.value = state.settings.gemini?.apiKey || '';
         geminiModelSelect.value = state.settings.gemini?.model || 'gemini-2.0-flash';
@@ -371,6 +381,10 @@
             openai: {
                 apiKey: openaiApiKeyInput.value,
                 model: openaiModelSelect.value
+            },
+            openrouter: {
+                apiKey: openrouterApiKeyInput.value,
+                model: openrouterModelSelect.value
             },
             gemini: {
                 apiKey: geminiApiKeyInput.value,

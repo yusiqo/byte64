@@ -1,6 +1,7 @@
 // AI Provider türleri
 export enum AIProvider {
     OpenAI = 'openai',
+    OpenRouter = 'openrouter',
     Gemini = 'gemini',
     Local = 'local',
     Anthropic = 'anthropic'
@@ -34,6 +35,10 @@ export interface AIServiceState {
 export interface AISettings {
     defaultProvider: string;
     openai: {
+        apiKey: string;
+        model: string;
+    };
+    openrouter: {
         apiKey: string;
         model: string;
     };

@@ -19,6 +19,10 @@ export const DEFAULT_AI_SETTINGS = {
         apiKey: '',
         model: 'gpt-3.5-turbo'
     },
+    openrouter: {
+        apiKey: '',
+        model: 'google/gemini-2.5-pro-exp-03-25:free'
+    },
     gemini: {
         apiKey: '',
         model: 'gemini-1.5-flash'

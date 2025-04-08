@@ -47,6 +47,7 @@ export function getWebviewContent(extensionUri: vscode.Uri, webview: vscode.Webv
                     <div class="provider-selector">
                         <select id="aiProvider">
                             <option value="openai">OpenAI</option>
+                            <option value="openrouter">OpenRouter</option>
                             <option value="gemini">Google Gemini</option>
                             <option value="local">Yerel Model</option>
                         </select>

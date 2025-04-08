@@ -54,6 +54,10 @@ export class SettingsManager {
                 if (settings.openai.apiKey) {
                     await this.aiService.setOpenAIApiKey(settings.openai.apiKey);
                 }
+
+                if (settings.openrouter.apiKey) {
+                    await this.aiService.setOpenAIApiKey(settings.openrouter.apiKey);
+                }
                 
                 if (settings.gemini.apiKey) {
                     await this.aiService.setGeminiApiKey(settings.gemini.apiKey);

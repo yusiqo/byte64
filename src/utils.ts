@@ -108,7 +108,7 @@ export function extractCodeBlocks(text: string): Array<{code: string, fileName: 
  * @returns Dil tanımlayıcısı
  */
 export function getLanguageFromFileName(fileName: string): string {
-    if (!fileName) return 'plaintext';
+    if (!fileName) {return 'plaintext';}
     
     const extension = fileName.split('.').pop()?.toLowerCase() || '';
     

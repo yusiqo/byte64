@@ -1,15 +1,15 @@
 {
-  "name": "byte",
-  "displayName": "Byte AI Assistant",
+  "name": "byte64",
+  "displayName": "byte64 AI Assistant",
   "description": "AI-powered coding assistant that helps developers write, analyze, refactor, and optimize code. Features include code explanation, documentation generation, unit test creation, and intelligent suggestions to improve code quality and productivity.",
   "version": "0.1.2",
-  "publisher": "byte",
+  "publisher": "byte64",
   "author": {
-    "name": "Tuncer Bagcabasi"
+    "name": "yusiqo"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/tuncer-byte/byte"
+    "url": "https://github.com/yusiqo/byte64"
   },
   "license": "MIT",
   "icon": "media/icons/icon-white.png",
